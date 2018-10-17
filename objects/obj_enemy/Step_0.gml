@@ -30,9 +30,6 @@ if instance_exists(obj_grunt){
 	// if player shot any enemy (except hulk), kills it
 	nearPlayerBullet = instance_nearest(x, y, obj_playerBullet)
 	if collision_rectangle(x-16, y-16, x+16, y+16, obj_playerBullet, true, false){
-		// play hit sound
-		audio_play_sound(snd_hitEnemy, 1, false)
-		
 		instance_destroy()
 		instance_destroy(nearPlayerBullet)
 		global.scores += enemyScore

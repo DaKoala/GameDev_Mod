@@ -13,6 +13,12 @@ if global.rested{
 		gruntMoveTimer -= 1
 		gruntCanMove = false
 	}
+	
+	// check if it collides with a human
+	human = collision_circle(x, y, 16, obj_human, false, false)
+	if human {
+		instance_destroy(human)
+	}
 
 	// accerlerates unless reaches fastest limit
 	if gruntMoveTimerMax > gruntMoveTimerLimit{
@@ -27,6 +33,12 @@ if global.rested{
 	}
 	else{
 		gruntSpeed = gruntSpeedMax
+		exhausted -= 1
+	}
+	// Minus 1 to exhausted coefficient, if it is 0, half the speed
+	if exhausted == 0 {
+		exhausted = room_speed * 3
+		gruntSpeed *= 0.5
 	}
 
 
@@ -43,38 +55,7 @@ if global.rested{
 		urDis = point_distance(obj_player.x, obj_player.y, x+gruntSpeed, y-gruntSpeed)
 		dlDis = point_distance(obj_player.x, obj_player.y, x-gruntSpeed, y+gruntSpeed)
 		drDis = point_distance(obj_player.x, obj_player.y, x+gruntSpeed, y+gruntSpeed)
-	
-		// the least distance would decide the direction of movement
-		/*
-		ds_list_add(disList, [uDis,dDis,lDis,rDis,ulDis,urDis,dlDis,drDis])
-		disListSorted = ds_list_sort(disList, true)
-		leastDis = ds_list_find_value(disListSorted, 0)
-		if uDis <= leastDis{
-			gruntDir = "u"
-		}
-		else if dDis <= leastDis{
-			gruntDir = "d"
-		}
-		else if lDis <= leastDis{
-			gruntDir = "l"
-		}
-		else if rDis <= leastDis{
-			gruntDir = "r"
-		}
-		else if ulDis <= leastDis{
-			gruntDir = "ul"
-		}
-		else if urDis <= leastDis{
-			gruntDir = "ur"
-		}
-		else if dlDis <= leastDis{
-			gruntDir = "dl"
-		}
-		else if drDis <= leastDis{
-			gruntDir = "dr"
-		}
-	
-		*/
+
 		if uDis<dDis and uDis<lDis and uDis<rDis and uDis<ulDis and uDis<urDis and uDis<dlDis and uDis<drDis{
 			gruntDir = "u"
 		}
@@ -130,4 +111,6 @@ if global.rested{
 			x+=gruntSpeed
 		}
 	}
+} else {
+	gruntSpeed = 5
 }

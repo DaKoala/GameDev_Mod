@@ -1,0 +1,15 @@
+New Objects:
+
+
+
+Modified Old Objects:
+
+obj_grunt
+- Add a collision detection between grunts and citizens. If a grunt collides with a citizen, the citizen will be killed.
+- Slightly enlarge the random range of a grunt’s max speed, max move timer, speed acceleration and move timer acceleration.
+- Increase the max speed of the grunt.
+- When a grunt’s speed reaches its maximum, the grunt will be “exhausted” after 3 seconds, its speed will be halved and will start to accelerate again.
+- After the player revives, the every grunt’s speed will be reinitialized to the minimum, not be kept to the current value(which is usually the maximum value).
+
+obj_enemy
+- Put the execution of playing audio to the destroy life span function.
