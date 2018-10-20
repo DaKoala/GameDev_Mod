@@ -82,6 +82,11 @@ if global.rested {
 		playerShootTimer -= 1
 		playerCanShoot = false
 	}
+	
+	// check ammo
+	if global.ammo <= 0 {
+		playerCanShoot = false
+	}
 
 	if playerCanShoot==true{
 		// player shooting directions I J K L IJ IL KJ KL
@@ -90,6 +95,7 @@ if global.rested {
 		or keyboard_check(ord("J"))
 		or  keyboard_check(ord("L")){
 			// play shooting sound
+			global.ammo -= 1
 			audio_play_sound(snd_shoot, 1,false)
 			
 			// if player shoots, create an instance of bullet

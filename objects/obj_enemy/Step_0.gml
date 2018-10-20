@@ -15,15 +15,7 @@ if instance_exists(obj_grunt){
 	// if player collide with any of the enemy, deduct one life
 	if playerCanLoseLife{
 		if collision_rectangle(x-16, y-16, x+16, y+16, obj_player, true, false){
-			// play lose life sound
-			audio_play_sound(snd_loseLife, 1, false)
-			
-			global.playerLives -= 1
-			// reset player position to middle
-			obj_player.x = room_width/2
-			obj_player.y = room_height/2
-			playerCanLoseLife = false
-			global.tryAgain = true
+			lose_life()
 		}
 	}
 

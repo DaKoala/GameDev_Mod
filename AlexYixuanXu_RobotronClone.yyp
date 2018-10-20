@@ -210,6 +210,25 @@
             }
         },
         {
+            "Key": "43d626e8-f5b9-4753-8432-800b6fdf9175",
+            "Value": {
+                "id": "07a61ee9-53a5-441c-9031-d020265b6fe1",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/create_fireball\/create_fireball.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "53e905ab-2ac5-4184-b67e-9cfab7f73b59",
             "Value": {
                 "id": "ab6df899-2c9e-4ffe-bd39-dba30d22dfc6",
@@ -495,6 +514,25 @@
             }
         },
         {
+            "Key": "a20966e7-62ca-40a2-9820-dcc1f5fdacf7",
+            "Value": {
+                "id": "15932475-7697-451c-a21a-b7e2d8ae116d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/spr_ammo\/spr_ammo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a6226164-8c1b-42b3-868a-1d19c08498ac",
             "Value": {
                 "id": "37c725f7-f4a4-4e43-9cd4-8d5f57725f98",
@@ -723,6 +761,25 @@
             }
         },
         {
+            "Key": "dc13277d-b7d6-46a3-8418-a6944b3e95ce",
+            "Value": {
+                "id": "7c1b8e49-fabe-4082-acb6-6f9f2777bdb1",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/lose_life\/lose_life.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "dcf63f0b-7bf0-4f58-8e79-ee23bb9bc009",
             "Value": {
                 "id": "02a3bdfa-5c69-46f5-a8b6-b549aa56d81c",
@@ -895,7 +952,8 @@
         }
     ],
     "script_order": [
-        
+        "43d626e8-f5b9-4753-8432-800b6fdf9175",
+        "dc13277d-b7d6-46a3-8418-a6944b3e95ce"
     ],
     "tutorial": ""
 }

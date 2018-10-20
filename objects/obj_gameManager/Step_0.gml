@@ -24,6 +24,14 @@ else if room == rm_level1{
 		}
 	}
 	
+	if global.rested {
+		fireTimer += 1
+		if fireTimer == fireTimerMax {
+			create_fireball()
+			fireTimer = 0
+		}
+	}
+	
 	// check if loses or wins
 	if global.playerLives == 0 or global.levelPassed == true{
 		room_goto(rm_end)

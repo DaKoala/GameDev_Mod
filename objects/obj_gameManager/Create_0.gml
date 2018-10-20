@@ -19,3 +19,8 @@ global.rested = true
 
 // this is for drawing bounding box
 global.margin = 20
+
+global.ammo = 0
+
+fireTimerMax = room_speed
+fireTimer = 0

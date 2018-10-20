@@ -7,11 +7,11 @@ for (i=0; i<10; i++){
 }
 
 // produce grunts
-for (i=0; i<12; i++){
+for (i=0; i<15; i++){
 	instance_create_depth(x, y, 0, obj_grunt)
 }
 
 // produce human
-for (i=0; i<4; i++){
+for (i=0; i<6; i++){
 	instance_create_depth(x, y, 0, obj_human)
 }

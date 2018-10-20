@@ -27,7 +27,7 @@ else if room == rm_level1{
 	draw_set_color(c_red)
 	draw_text(50, 50, "Lives: "+string(global.playerLives))
 	draw_text(50, 100, "Score: "+string(global.scores))
-	
+	draw_text(50, 150, "Ammo: " + string(global.ammo))
 }
 else if room == rm_end{
 	// final message depends on whether passed the level
