@@ -16,13 +16,17 @@ if x > room_width + 100 or x < -100 or y > room_height + 100 or y < -100 {
 }
 
 enemy = collision_circle(x, y, 10, obj_enemy, false, false)
-if enemy {
+if enemy and global.rested {
 	instance_destroy(enemy)
+	instance_destroy()
+	audio_play_sound(snd_fire, 2, false)
 }
 
 human = collision_circle(x, y, 10, obj_enemy, false, false)
-if enemy {
+if human and global.rested {
 	instance_destroy(human)
+	instance_destroy()
+	audio_play_sound(snd_fire, 2, false)
 }
 
 player = collision_circle(x, y, 10, obj_player, false, false)

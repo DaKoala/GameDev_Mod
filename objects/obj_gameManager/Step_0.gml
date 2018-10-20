@@ -30,6 +30,12 @@ else if room == rm_level1{
 			create_fireball()
 			fireTimer = 0
 		}
+		
+		ammoTimer += 1
+		if ammoTimer == ammoTimerMax {
+			create_ammo()
+			ammoTimer = 0
+		}
 	}
 	
 	// check if loses or wins
@@ -49,6 +55,8 @@ else if room == rm_end{
 		global.humanSaved = 0
 
 		global.levelPassed = false
+		fireTimer = 0
+		ammoTimer = 0
 
 		// a boolean to keep track if player died and rearrange the level
 		global.tryAgain = false

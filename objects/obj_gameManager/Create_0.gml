@@ -24,3 +24,6 @@ global.ammo = 0
 
 fireTimerMax = room_speed
 fireTimer = 0
+
+ammoTimerMax = room_speed * 10
+ammoTimer = 0

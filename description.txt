@@ -1,8 +1,20 @@
 New Objects:
 
+obj_fireball
+- An object that will be generated every second and will destroy anything it collides(human, player or enemy)
+
+The fireball moves really fast. I want there to be more than one dangerous factors so I introduce a new element. This requires the player to move carefully. Also, it will destroy enemies, giving the player another choice to kill enemies without ammo. Generally I think this makes the game more challenging.
+
+obj_ammo
+- An object that will be generated every 10 seconds and will disappear after 5 seconds. It can provide the player with 10 ammo.
+
+Currently the game has only 1 stage so infinite ammo seems too easy for the player to destroy all enemies so I add a limit to it. Each shooting costs the player 1 ammo and initially there is no ammo. The player has to dodge grunts at the beginning. The ammo system makes the game more challenging.
 
 
 Modified Old Objects:
+
+obj_player
+- Add an ammo system. Initially the player cannot shot because there is no ammo. The player should collect ammo to shot. Every shooting takes 1 ammo.
 
 obj_grunt
 - Add a collision detection between grunts and citizens. If a grunt collides with a citizen, the citizen will be killed.
@@ -10,6 +22,11 @@ obj_grunt
 - Increase the max speed of the grunt.
 - When a grunt’s speed reaches its maximum, the grunt will be “exhausted” after 3 seconds, its speed will be halved and will start to accelerate again.
 - After the player revives, the every grunt’s speed will be reinitialized to the minimum, not be kept to the current value(which is usually the maximum value).
+- Change the generation function so that it will not kill the player or citizens at the beginning of the game.
+
+The grunt moves too slow to catch the player. After the modification, the grunt can catch the player when it reaches its maximum speed. It moves much faster now. However, it will become slow after it reaches its maximum speed to give the player some time to collect ammo. Also it is annoying that you lose your health point because grunts are generated at the same position as you so this time I will let them generated near the player at the beginning.
 
 obj_enemy
 - Put the execution of playing audio to the destroy life span function.
+
+Make the code easy to maintain.
